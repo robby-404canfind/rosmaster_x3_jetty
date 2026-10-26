@@ -69,6 +69,7 @@ ros2 run rosmaster_x3_jetty shutdown_navigation
 - 2D LiDAR, RGB-D 카메라, IMU
 - Omni AMCL / Omni MPPI / 옆 방향 속도 평활화
 - 기본 Nav2, Keepout·Speed Filter, 예제 BT
+- WaitAtWaypoint: 각 웨이포인트에서 200ms 정지
 - 시뮬레이션용 구성. 실제 로봇의 하드웨어 드라이버는 포함하지 않습니다.
 
 Lyrical의 `goThroughPoses()`에는 `nav_msgs/msg/Goals`를 전달하고, `goals` 배열에는 `PoseStamped`를 넣습니다.

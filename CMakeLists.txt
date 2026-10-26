@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.20)
+project(rosmaster_x3_jetty)
+find_package(ament_cmake REQUIRED)
+install(DIRECTORY launch config maps worlds rviz urdf meshes behavior_trees DESTINATION share/${PROJECT_NAME})
+install(PROGRAMS scripts/shutdown_navigation.py DESTINATION lib/${PROJECT_NAME} RENAME shutdown_navigation)
+install(FILES LICENSE LICENSE_APACHE-2.0 THIRD_PARTY.md README.md VALIDATION.md DESTINATION share/${PROJECT_NAME})
+ament_package()

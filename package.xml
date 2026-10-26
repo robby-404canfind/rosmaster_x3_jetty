@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <package format="3">
-  <name>rosmaster_x3_jetty</name><version>0.1.1</version>
+  <name>rosmaster_x3_jetty</name><version>0.1.2</version>
   <description>ROSMASTER X3 simulation and Nav2 teaching environment for ROS 2 Lyrical and Gazebo Jetty.</description>
   <maintainer email="robby-404canfind@users.noreply.github.com">Robby</maintainer>
   <license>BSD-3-Clause</license><license>Apache-2.0</license>

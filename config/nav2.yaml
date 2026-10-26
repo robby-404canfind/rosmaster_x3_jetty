@@ -361,8 +361,8 @@ speed_costmap_filter_info_server:
     type: 1
     filter_info_topic: speed_costmap_filter_info
     mask_topic: speed_filter_mask
-    base: 0.0
-    multiplier: 1.0
+    base: 100.0
+    multiplier: -1.0
 map_saver:
   ros__parameters:
     save_map_timeout: 5.0

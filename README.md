@@ -53,6 +53,21 @@ ros2 launch rosmaster_x3_jetty navigation.launch.py use_speed_zones:=true
 
 예제 마스크는 지도 좌표 `x=1~2`, `y=-0.6~0.6` 구간입니다. Keepout은 진입을 막고, Speed는 최대 속도를 50%로 제한합니다. 다른 마스크는 `keepout_mask:=경로` 또는 `speed_mask:=경로`로 지정할 수 있습니다.
 
+GIMP로 편집해 확인한 마스크도 포함되어 있습니다. 같은 지도 좌표계와 해상도를 사용합니다.
+
+```bash
+# 금지 사각형을 우회
+ros2 launch rosmaster_x3_jetty navigation.launch.py use_keepout_zones:=true keepout_mask:=$HOME/ros2_ws/src/rosmaster_x3_jetty/maps/depot_keepout.yaml
+
+# 지정 통로 안에서 주행
+ros2 launch rosmaster_x3_jetty navigation.launch.py use_keepout_zones:=true keepout_mask:=$HOME/ros2_ws/src/rosmaster_x3_jetty/maps/depot_lanes.yaml
+
+# 70%와 50% 구역을 통과
+ros2 launch rosmaster_x3_jetty navigation.launch.py use_speed_zones:=true speed_mask:=$HOME/ros2_ws/src/rosmaster_x3_jetty/maps/depot_speed.yaml
+```
+
+Speed 마스크는 `mode: scale`, `base: 100.0`, `multiplier: -1.0`을 사용합니다. GIMP의 HTML 색상 `b3b3b3`과 `808080`이 각각 70%, 50% 구역에 해당합니다. 마스크 값 0은 속도 제한을 해제합니다.
+
 ## 종료
 
 시뮬레이터가 켜진 상태에서 새 터미널에 입력합니다.
